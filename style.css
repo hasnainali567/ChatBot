@@ -163,7 +163,10 @@ body {
 }
 
 #input-feild {
-    flex-grow: 1;
+    width: 80%;
+    overflow: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
     outline: none;
     background-color: transparent;
     border: none;
