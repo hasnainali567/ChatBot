@@ -141,6 +141,7 @@ body {
 
 .massage{
     /* width: fit-content; */
+    align-self: flex-start;
     padding: 0;
     margin: 0;
     border-radius: 50px;
@@ -152,8 +153,15 @@ body {
 }
 
 
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+
 .right{
     align-items: end !important;
+    align-self: flex-end;
     color: var(--text-light);
     background-color: var(--saylani-blue);
     border-bottom-right-radius: 0px !important;
@@ -172,3 +180,26 @@ body {
         transform: scale(1);
     }
 }
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 40px;
+    aspect-ratio: 2;
+    --_g: no-repeat radial-gradient(circle closest-side, #000 50%, #0000); /* Reduced from 90% to 50% */
+    background: 
+      var(--_g) 0%   50%,
+      var(--_g) 50%  50%,
+      var(--_g) 100% 50%;
+    background-size: calc(100% / 3) 40%; /* Slightly smaller height too */
+    animation: l3 1s infinite linear;
+  }
+  
+  @keyframes l3 {
+    20%  { background-position: 0% 0%,    50% 50%, 100% 50% }
+    40%  { background-position: 0% 100%,  50% 0%,  100% 50% }
+    60%  { background-position: 0% 50%,   50% 100%, 100% 0% }
+    80%  { background-position: 0% 50%,   50% 50%, 100% 100% }
+  }
+  
+  

@@ -10,12 +10,13 @@ send.addEventListener("click", () => {
   let botOutput = document.createElement("div");
   botOutput.classList.add("massage");
 
-  if (input_feild) {
+  if (input_feild_Val) {
     userInput.textContent = `${input_feild_Val}`;
     chat.appendChild(userInput);
+    input_feild.value = '';
   }
 
-  botOutput.textContent = `Bot is Typing...`;
+  botOutput.innerHTML = `<div class="loader"></div>`;
   setTimeout(() => {
     chat.appendChild(botOutput);
   }, 1000);
@@ -35,6 +36,8 @@ send.addEventListener("click", () => {
         }
         index ++;
       }, 50)
+
+      clearInterval()
     }, 2000);
   }
 });
