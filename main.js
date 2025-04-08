@@ -9,18 +9,26 @@ send.addEventListener("click", () => {
   userInput.classList.add("massage", "right", "animate");
   let botOutput = document.createElement("div");
   botOutput.classList.add("massage");
+  
 
-  if (input_feild_Val) {
+  if (input_feild_Val !== '') {
     userInput.textContent = `${input_feild_Val}`;
     chat.appendChild(userInput);
     input_feild.value = "";
   }
+
+  botAnswer(input_feild_Val, botOutput);
 
   botOutput.innerHTML = `<div class="loader"></div>`;
   setTimeout(() => {
     chat.appendChild(botOutput);
   }, 1000);
 
+  
+});
+
+
+function botAnswer(input_feild_Val, botOutput) {
   if (input_feild_Val === "hi") {
     let botAnswer = `Hello! How are you?`;
     let index = 0;
@@ -58,4 +66,4 @@ send.addEventListener("click", () => {
       clearInterval();
     }, 2000);
   }
-});
+}

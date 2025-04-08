@@ -1,26 +1,25 @@
 :root {
-    --saylani-green: #8DC63F;
-    --saylani-blue: #0D6EFD;
-    --glass-bg: rgba(255, 255, 255, 0.25);       /* more visible glass */
-    --glass-border: rgba(255, 255, 255, 0.4);    /* stronger border */
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.3);
     --text-light: #ffffff;
-    --text-dark: #1a1a1a;
-    --shadow-clr: rgba(0, 0, 0, 0.2);            /* deeper shadow */
+    --text-dark: #2c2c2c;
+    --shadow-clr: rgba(0, 0, 0, 0.3);
+    --primary-blur: blur(500px);
+    --primary-glow: rgba(255, 255, 255, 0.4);
 }
 
-
-
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     height: 100vh;
     width: 100%;
-    background-color: var(--saylani-blue);
+    background: linear-gradient(135deg, #1e1e2f, #3a3a50);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,37 +32,39 @@ body {
     max-height: 500px;
     min-width: 300px;
     max-width: 300px;
-    background-color: var(--text-light);
+    background-color: var(--glass-bg);
     border-radius: 30px;
     position: relative;
+    backdrop-filter: var(--primary-blur);
+    -webkit-backdrop-filter: var(--primary-blur);
+    box-shadow: 0 8px 32px var(--shadow-clr);
+    border: 4px solid var(--glass-border);
     overflow: hidden;
-    box-shadow: 0 4px 30px var(--shadow-clr);
-    border: 1px solid var(--glass-border);
 }
 
 #nav {
+    height: 50px;
     position: absolute;
     top: 1.5%;
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
     border-radius: 50px;
-    /* background: var(--saylani-green); */
-    background-color: var(--saylani-green);
-    box-shadow: 0 4px 30px var(--shadow-clr);
-    overflow: hidden;
+    background: var(--glass-bg);
+    border: 3px solid var(--glass-border);
+    box-shadow: 0 4px 20px var(--shadow-clr);
 }
 
 #nav-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--saylani-blue);
-    /* padding: 5px; */
+    color: #1e1e2f;
+    padding: 5px;
 }
 
-#nav-logo > img {
-    mix-blend-mode: multiply;
+#nav-logo > h4 {
+
 }
 
 #input {
@@ -76,132 +77,100 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
-    background-color: transparent;
+    background: var(--glass-bg);
     border-radius: 50px;
-    padding: 3px;
-    padding-left: 10px;
-    box-shadow: 0 4px 15px var(--shadow-clr);
-    border: 2px solid var(--text-dark);
-    color: var(--text-dark);
+    padding: 5px 10px;
+    border: 4px solid var(--glass-border);
+    backdrop-filter: var(--primary-blur);
+    -webkit-backdrop-filter: var(--primary-blur);
+    /* box-shadow: 0 4px 15px var(--shadow-clr); */
+    color: var(--text-light);
 }
 
-
 #input > i {
-    padding: 8px;
-    background-color: #0D6EFD;
+    padding: 10px;
+    background-color: var(--glass-border);
     color: var(--text-light);
     border-radius: 50%;
-    text-align: center;
     cursor: pointer;
-    box-shadow: 2px 2px 5px var(--shadow-clr);
+    box-shadow: 0 0 10px var(--primary-glow);
 }
 
 #input-feild {
-    height: 100%;
     flex-grow: 1;
     outline: none;
     background-color: transparent;
     border: none;
     font-size: medium;
-    color: var(--text-dark);
+    color: var(--text-light);
 }
-
 
 #chat {
     position: absolute;
-    top: calc(1.5% + 50px);
+    top: calc(1.5% );
     width: 100%;
-    height: 380px;
-    margin-block: auto;
+    height: 76%;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     padding: 10px;
-    overflow: auto;
-    scroll-behavior: smooth;
+    padding-top: 70px;
+    padding-bottom: 50px;
+    overflow-y: auto;
     scrollbar-width: none;
-}
-
-
-.animate {
-    animation: massage 1s 1;
-    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+    scroll-behavior: smooth;
 }
 
 .massage {
-    display: flex;
-    justify-content: start;
-}
-
-.right{
-    justify-content: end;
-}
-
-
-
-.massage{
-    max-width: 70%;
     width: fit-content;
     align-self: flex-start;
-    padding: 0;
-    margin: 0;
-    border-radius: 50px;
-    border-bottom-left-radius: 0;
-    padding: 6px;
-    padding-inline: 20px;
-    color: var(--text-light);
-    background-color: var(--saylani-green);
+    border-radius: 25px;
+    padding: 10px 20px;
+    color: var(--text-dark);
+    font-weight: 500 !important;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    animation: massage 1s ease;
 }
 
-
-
-.flex-center{
-    display: flex;
-    justify-content: center;
-}
-
-.right{
-    max-width: 70%;
-    align-items: end !important;
+.right {
     align-self: flex-end;
-    color: var(--text-light);
-    background-color: var(--saylani-blue);
     border-bottom-right-radius: 0px !important;
-    border-bottom-left-radius: 50px !important;
+    border-bottom-left-radius: 25px !important;
+    color: var(--text-light);
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--glass-border);
 }
+
 @keyframes massage {
     0% {
-        position: absolute;
-        bottom: calc(1.5% + 3px);
-        right: calc(1.5% + 3px);
-        transform: scale(.9);
+        transform: scale(0.8);
+        opacity: 0;
     }
-
     100% {
-        position: relative;
         transform: scale(1);
+        opacity: 1;
     }
 }
 
-
-/* HTML: <div class="loader"></div> */
+/* Loader */
 .loader {
     width: 40px;
     aspect-ratio: 2;
-    --_g: no-repeat radial-gradient(circle closest-side, #000 50%, #0000); /* Reduced from 90% to 50% */
+    --_g: no-repeat radial-gradient(circle closest-side, #ffffff 30%, transparent);
     background: 
-      var(--_g) 0%   50%,
-      var(--_g) 50%  50%,
-      var(--_g) 100% 50%;
-    background-size: calc(100% / 3) 40%; /* Slightly smaller height too */
+        var(--_g) 0% 50%,
+        var(--_g) 50% 50%,
+        var(--_g) 100% 50%;
+    background-size: calc(100% / 3) 40%;
     animation: l3 1s infinite linear;
-  }
-  
-  @keyframes l3 {
+    filter: drop-shadow(0 0 5px var(--primary-glow));
+}
+
+@keyframes l3 {
     20%  { background-position: 0% 0%,    50% 50%, 100% 50% }
     40%  { background-position: 0% 100%,  50% 0%,  100% 50% }
     60%  { background-position: 0% 50%,   50% 100%, 100% 0% }
     80%  { background-position: 0% 50%,   50% 50%, 100% 100% }
-  }
-  
-  
+}
