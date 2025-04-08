@@ -13,7 +13,7 @@ send.addEventListener("click", () => {
   if (input_feild_Val) {
     userInput.textContent = `${input_feild_Val}`;
     chat.appendChild(userInput);
-    input_feild.value = '';
+    input_feild.value = "";
   }
 
   botOutput.innerHTML = `<div class="loader"></div>`;
@@ -25,19 +25,37 @@ send.addEventListener("click", () => {
     let botAnswer = `Hello! How are you?`;
     let index = 0;
     setTimeout(() => {
-      botOutput.textContent = '';
+      botOutput.textContent = "";
       // botOutput.textContent = botAnswer;
 
-      setInterval(()=>{
+      setInterval(() => {
         if (index < botAnswer.length) {
-          botOutput.textContent += botAnswer[index]
+          botOutput.textContent += botAnswer[index];
         } else {
           return;
         }
-        index ++;
-      }, 50)
+        index++;
+      }, 50);
 
-      clearInterval()
+      clearInterval();
+    }, 2000);
+  } else {
+    let botAnswer = `I am not able to Understand.`;
+    let index = 0;
+    setTimeout(() => {
+      botOutput.textContent = "";
+      // botOutput.textContent = botAnswer;
+
+      setInterval(() => {
+        if (index < botAnswer.length) {
+          botOutput.textContent += botAnswer[index];
+        } else {
+          return;
+        }
+        index++;
+      }, 50);
+
+      clearInterval();
     }, 2000);
   }
 });
