@@ -55,7 +55,19 @@ function botAnswer(input_field_Val, botOutput) {
   ) {
     bot_answer = "Hello! How are you?";
   }
+
   
+  
+  else if (
+    input_field_Val.includes("fine") || input_field_Val.includes("good") ||
+    input_field_Val.includes("thek") || input_field_Val.includes("theek") ||
+    input_field_Val.includes("good") || input_field_Val.includes("ok") ||
+    input_field_Val.includes("mast")
+  ) {
+    bot_answer = "Admission ke liye aapko Saylani ki website par online form bharna hoga.";
+  }
+
+
   else if (
     input_field_Val.includes("admission") || input_field_Val.includes("admisn") ||
     input_field_Val.includes("addmission") || input_field_Val.includes("admision") ||
